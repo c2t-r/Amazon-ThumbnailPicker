@@ -1,0 +1,26 @@
+{
+    "name": "Amazon-ThumbnailPicker",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "In amazon prime video, Open thumbnail in new tab.",
+    "background": {
+        "service_worker": "event.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.amazon.co.jp/gp/video/*"],
+        "run_at":"document_start",
+        "js": ["script.js"]
+      }
+    ],  
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "contextMenus"
+    ],
+    "icons": {
+        "16": "icons/icon_16.png",
+        "48": "icons/icon_48.png",
+        "128": "icons/icon_128.png"
+    }
+}
